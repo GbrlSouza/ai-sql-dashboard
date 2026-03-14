@@ -1,103 +1,224 @@
 # 🤖 AI SQL Dashboard
 
-Uma aplicação moderna e elegante de Inteligência de Dados baseada em linguagem natural que permite aos usuários fazer perguntas sobre dados de vendas usando linguagem natural. O sistema converte perguntas em SQL usando Google Gemini, executa as consultas em um banco SQLite e apresenta os resultados em tabelas e gráficos interativos.
+Uma aplicação completa de Inteligência de Dados que permite aos usuários fazer perguntas em linguagem natural sobre dados de vendas. Utilizando IA (Google Gemini), o sistema converte perguntas em consultas SQL, executa no banco de dados SQLite e apresenta os resultados em tabelas e gráficos interativos com design Bootstrap ERP moderno.
 
-## ✨ Características Visuais
+## ✨ Funcionalidades
 
-- 🎨 **Design Moderno**: Interface com gradientes, sombras suaves e animações elegantes
-- 📱 **Responsivo**: Layout adaptável para desktop e mobile
-- 🌈 **Paleta de Cores**: Gradientes vibrantes e cores harmoniosas
-- ⚡ **Animações**: Transições suaves e efeitos hover interativos
-- 📊 **Gráficos Avançados**: Visualizações com tooltips personalizados e formatação monetária
-- 🎯 **UX Intuitiva**: Componentes bem organizados com ícones expressivos
+- 🗣️ **Consultas em Linguagem Natural**: Faça perguntas como "Quais são os produtos mais vendidos?" ou "Qual o total de vendas por mês?"
+- 🤖 **IA Avançada**: Integração com Google Gemini para conversão automática de perguntas em SQL
+- 📊 **Visualizações Interativas**: Gráficos automáticos (barras, pizza) com Chart.js
+- 📋 **Tabelas Responsivas**: Exibição de dados em tabelas Bootstrap com formatação adequada
+- 🛡️ **Segurança SQL**: Validação rigorosa para permitir apenas consultas SELECT seguras
+- 🎨 **Design ERP**: Interface limpa e profissional com Bootstrap, ideal para sistemas empresariais
+- 📱 **Responsivo**: Funciona perfeitamente em desktop e mobile
 
 ## 🏗️ Arquitetura
 
-A aplicação é dividida em backend e frontend:
+### Backend (Python/FastAPI)
+- **API REST**: Endpoints para processamento de consultas
+- **Validação SQL**: Garante segurança e previne operações não autorizadas
+- **Integração Gemini**: Conversão de linguagem natural para SQL
+- **Execução de Consultas**: Interface com SQLite
 
-- **Backend (Python/FastAPI)**: Gerencia a lógica de negócio, integração com Gemini API e execução de SQL.
-- **Frontend (React/Next.js)**: Interface responsiva com chat, tabela e gráficos automáticos.
-- **Banco de Dados (SQLite)**: Armazena dados de vendas fictícios.
+### Frontend (React/Next.js)
+- **Interface de Chat**: Input intuitivo para perguntas
+- **Exibição de Resultados**: Tabela e gráfico dinâmicos
+- **Layout Bootstrap**: Design ERP profissional e responsivo
 
-## 🛠️ Tecnologias
+### Banco de Dados (SQLite)
+- **Dados de Vendas**: 150 registros realistas de produtos tecnológicos
+- **Esquema Otimizado**: Tabela vendas com campos relevantes
 
-- **Backend**: Python, FastAPI, Google Gemini API
-- **Frontend**: React, Next.js, Chart.js, Tailwind CSS
-- **Banco**: SQLite
-- **IA**: Google Gemini 2.0 Flash Experimental
+## 🛠️ Tecnologias Utilizadas
 
-## Como Rodar Localmente
+### Backend
+- **Python 3.8+**
+- **FastAPI**: Framework web moderno e rápido
+- **Google Gemini API**: IA para processamento de linguagem natural
+- **SQLite**: Banco de dados leve e embutido
+- **Pydantic**: Validação de dados
+- **Uvicorn**: Servidor ASGI
+
+### Frontend
+- **React 18**: Biblioteca para interfaces
+- **Next.js 14**: Framework React com App Router
+- **TypeScript**: Tipagem estática
+- **Bootstrap 5**: Framework CSS para design ERP
+- **Chart.js**: Biblioteca de gráficos
+- **Axios**: Cliente HTTP
+
+### Desenvolvimento
+- **Git**: Controle de versão
+- **VS Code**: Ambiente de desenvolvimento
+- **PowerShell**: Terminal no Windows
+
+## 🚀 Como Executar
 
 ### Pré-requisitos
 
-- Python 3.8+
-- Node.js 16+
-- Chave da API do Google Gemini
+- Python 3.8 ou superior
+- Node.js 16 ou superior
+- Chave da API do Google Gemini (opcional - sem ela, usa simulações)
 
-### Configuração da API Gemini
+### 1. Clonagem e Configuração
 
-1. Obtenha uma chave da API do Google Gemini em [Google AI Studio](https://makersuite.google.com/app/apikey).
-2. Copie o arquivo `.env.example` para `.env` no diretório `backend` e adicione sua chave:
-   ```
-   GEMINI_API_KEY=sua_chave_aqui
-   ```
+```bash
+# Clone o repositório
+git clone <url-do-repositorio>
+cd ai-sql-dashboard
 
-### Executar o Banco de Dados
+# Configure a API do Gemini (opcional)
+cp backend/.env.example backend/.env
+# Edite backend/.env e adicione: GEMINI_API_KEY=sua_chave_aqui
+```
 
-1. Navegue para o diretório `backend`:
-   ```bash
-   cd backend
-   ```
+### 2. Backend
 
-2. Execute o script para criar o banco:
-   ```bash
-   python database.py
-   ```
+```bash
+# Navegue para o backend
+cd backend
 
-### Executar o Backend
+# Instale dependências
+pip install -r ../requirements.txt
 
-1. Instale as dependências:
-   ```bash
-   pip install -r requirements.txt
-   ```
+# Crie o banco de dados
+python database.py
 
-2. Execute o servidor:
-   ```bash
-   uvicorn main:app --reload
-   ```
+# Execute o servidor
+python main.py
+```
 
-O backend estará disponível em `http://localhost:8000`.
+O backend estará rodando em `http://localhost:8000`.
 
-### Executar o Frontend
+### 3. Frontend
 
-1. Navegue para o diretório `frontend`:
-   ```bash
-   cd frontend
-   ```
+```bash
+# Em outro terminal, navegue para o frontend
+cd frontend
 
-2. Instale as dependências:
-   ```bash
-   npm install
-   ```
+# Instale dependências
+npm install
 
-3. Execute o servidor de desenvolvimento:
-   ```bash
-   npm run dev
-   ```
+# Execute o servidor de desenvolvimento
+npm run dev
+```
 
-O frontend estará disponível em `http://localhost:8000`.
+O frontend estará disponível em `http://localhost:3000`.
 
-## Estrutura do Projeto
+### 4. Uso
 
+1. Abra `http://localhost:3000` no navegador
+2. Digite uma pergunta como "Quais produtos venderam mais?"
+3. Veja os resultados na tabela e gráfico
+
+## 📡 API Endpoints
+
+### POST /query
+Processa uma consulta em linguagem natural.
+
+**Request:**
+```json
+{
+  "question": "Qual o total de vendas por produto?"
+}
+```
+
+**Response:**
+```json
+{
+  "sql": "SELECT produto, SUM(total) as total_vendas FROM vendas GROUP BY produto ORDER BY total_vendas DESC",
+  "columns": ["produto", "total_vendas"],
+  "rows": [
+    ["Notebook Gamer", 135000.00],
+    ["Monitor 4K", 126000.00]
+  ],
+  "summary": "Encontrei 8 produtos com vendas totais."
+}
+```
+
+## 📊 Esquema do Banco de Dados
+
+### Tabela: vendas
+- `id` (INTEGER PRIMARY KEY): ID único
+- `data` (TEXT): Data da venda (YYYY-MM-DD)
+- `produto` (TEXT): Nome do produto
+- `valor_unidade` (REAL): Preço unitário
+- `quantidade` (INTEGER): Quantidade vendida
+- `total` (REAL): Valor total da venda
+- `forma_pagamento` (TEXT): Pix, Cartão, etc.
+- `parcelado` (TEXT): Sim/Não
+
+### Dados de Exemplo
+- 150 vendas de produtos tecnológicos
+- Período: Janeiro a Outubro de 2025
+- Produtos: Notebook Gamer, Monitor 4K, Teclado Mecânico, etc.
+
+## 🔧 Desenvolvimento
+
+### Estrutura do Projeto
 ```
 ai-sql-dashboard/
 ├── backend/
-│   ├── main.py          # API FastAPI
-│   ├── database.py      # Script para criar banco SQLite
-│   ├── gemini_service.py # Integração com Gemini
-│   ├── sql_service.py   # Execução e validação de SQL
-│   ├── models.py        # Modelos Pydantic
-│   └── config.py        # Configurações
+│   ├── main.py              # Servidor FastAPI
+│   ├── database.py          # Geração do banco
+│   ├── gemini_service.py    # Serviço Gemini
+│   ├── sql_service.py       # Validação e execução SQL
+│   ├── models.py            # Modelos de dados
+│   ├── config.py            # Configurações
+│   ├── .env                 # Variáveis de ambiente
+│   └── vendas_ficticias.db  # Banco SQLite
+├── frontend/
+│   ├── app/
+│   │   ├── layout.tsx       # Layout global
+│   │   ├── page.tsx         # Página principal
+│   │   └── globals.css      # Estilos globais
+│   ├── components/
+│   │   ├── Chat.tsx         # Componente de chat
+│   │   ├── Table.tsx        # Tabela de resultados
+│   │   └── Chart.tsx        # Gráficos
+│   ├── package.json
+│   └── next.config.js
+├── requirements.txt          # Dependências Python
+├── README.md                 # Este arquivo
+└── LICENSE                   # Licença
+```
+
+### Scripts Úteis
+
+```bash
+# Backend
+cd backend
+python database.py          # Recriar banco
+python main.py             # Executar servidor
+
+# Frontend
+cd frontend
+npm run build              # Build de produção
+npm run start              # Servidor de produção
+```
+
+## 🤝 Contribuição
+
+1. Fork o projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/nova-feature`)
+3. Commit suas mudanças (`git commit -am 'Adiciona nova feature'`)
+4. Push para a branch (`git push origin feature/nova-feature`)
+5. Abra um Pull Request
+
+## 📝 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## 🙋 Suporte
+
+Para dúvidas ou problemas:
+- Abra uma issue no GitHub
+- Verifique os logs do backend/frontend
+- Certifique-se de que as portas 8000 e 3000 estão livres
+
+---
+
+**Desenvolvido com ❤️ para demonstrar o poder da IA em análise de dados.**
 ├── frontend/
 │   ├── app/
 │   │   └── page.tsx     # Página principal
