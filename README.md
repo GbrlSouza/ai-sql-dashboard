@@ -76,7 +76,7 @@ O backend estará disponível em `http://localhost:8000`.
    npm run dev
    ```
 
-O frontend estará disponível em `http://localhost:3000`.
+O frontend estará disponível em `http://localhost:8000`.
 
 ## Estrutura do Projeto
 

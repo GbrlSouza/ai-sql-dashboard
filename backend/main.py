@@ -9,7 +9,7 @@ app = FastAPI(title="AI SQL Dashboard", description="Aplicação de Inteligênci
 # Configurar CORS para o frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # URL do Next.js
+    allow_origins=["http://localhost:8000"],  # URL do Next.js
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
