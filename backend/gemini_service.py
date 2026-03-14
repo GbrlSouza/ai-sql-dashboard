@@ -32,13 +32,17 @@ Pergunta do usuário: {question}
 """
 
 def generate_sql(question: str) -> str:
+    print(f"Client is set: {client is not None}")
     if not client:
         # Simulação para teste sem chave API
-        if "produto" in question.lower() and "mais" in question.lower():
-            return "SELECT produto, SUM(total) as total_vendas FROM vendas GROUP BY produto ORDER BY total_vendas DESC LIMIT 5"
-        elif "total" in question.lower():
+        question_lower = question.lower()
+        if "produto" in question_lower and "mais" in question_lower:
+            return "SELECT produto, SUM(total) as total_vendas FROM vendas GROUP BY produto ORDER BY total_vendas"
+        elif "liste" in question_lower and "produto" in question_lower:
+            return "SELECT DISTINCT produto FROM vendas ORDER BY produto"
+        elif "total" in question_lower:
             return "SELECT SUM(total) as total_geral FROM vendas"
-        elif "pagamento" in question.lower():
+        elif "pagamento" in question_lower:
             return "SELECT forma_pagamento, COUNT(*) as quantidade FROM vendas GROUP BY forma_pagamento"
         else:
             return "SELECT * FROM vendas LIMIT 10"
@@ -60,7 +64,7 @@ def generate_sql(question: str) -> str:
         # Fallback para simulação se houver erro na API
         print(f"Erro na API Gemini: {e}")
         if "produto" in question.lower() and "mais" in question.lower():
-            return "SELECT produto, SUM(total) as total_vendas FROM vendas GROUP BY produto ORDER BY total_vendas DESC LIMIT 5"
+            return "SELECT produto, SUM(total) as total_vendas FROM vendas GROUP BY produto ORDER BY total_vendas"
         elif "total" in question.lower():
             return "SELECT SUM(total) as total_geral FROM vendas"
         elif "pagamento" in question.lower():
