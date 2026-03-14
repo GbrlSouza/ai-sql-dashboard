@@ -30,7 +30,7 @@ export default function Table({ columns, rows }: TableProps) {
               {row.map((cell, cellIndex) => (
                 <td key={cellIndex} className="align-middle">
                   {typeof cell === 'number'
-                    ? cell.toLocaleString('pt-BR')
+                    ? cell.toFixed(2)
                     : String(cell)}
                 </td>
               ))}

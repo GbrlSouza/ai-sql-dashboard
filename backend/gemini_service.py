@@ -45,7 +45,7 @@ def generate_sql(question: str) -> str:
     
     try:
         response = client.models.generate_content(
-            model='gemini-2.0-flash-exp',
+            model='gemini-1.5-flash',
             contents=SYSTEM_PROMPT.format(question=question)
         )
         sql = response.text.strip()

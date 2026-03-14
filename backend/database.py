@@ -1,13 +1,18 @@
 import sqlite3
 import random
 from datetime import datetime, timedelta
+import os
 
 def gerar_dados():
+    # Remover o banco de dados existente para recriar do zero
+    if os.path.exists('vendas_ficticias.db'):
+        os.remove('vendas_ficticias.db')
+    
     conn = sqlite3.connect('vendas_ficticias.db')
     cursor = conn.cursor()
 
     cursor.execute('''
-        CREATE TABLE IF NOT EXISTS vendas (
+        CREATE TABLE vendas (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             data TEXT,
             produto TEXT,
