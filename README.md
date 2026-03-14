@@ -219,6 +219,7 @@ Para dúvidas ou problemas:
 ---
 
 **Desenvolvido com ❤️ para demonstrar o poder da IA em análise de dados.**
+```
 ├── frontend/
 │   ├── app/
 │   │   └── page.tsx     # Página principal
