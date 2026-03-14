@@ -246,7 +246,7 @@ Para dúvidas ou problemas:
 
 ## 🚀 Demonstração
 
-![AI SQL Dashboard](https://via.placeholder.com/800x400/6366f1/ffffff?text=AI+SQL+Dashboard+Demo)
+![AI SQL Dashboard](./demo/placeholder.png)
 
 *A interface moderna com gradientes, animações e visualizações interativas.*
 
