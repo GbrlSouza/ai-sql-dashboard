@@ -1,21 +1,30 @@
-# AI SQL Dashboard
+# 🤖 AI SQL Dashboard
 
-Uma aplicação de Inteligência de Dados baseada em linguagem natural que permite aos usuários fazer perguntas sobre dados de vendas usando linguagem natural. O sistema converte perguntas em SQL usando Google Gemini, executa as consultas em um banco SQLite e apresenta os resultados em tabelas e gráficos.
+Uma aplicação moderna e elegante de Inteligência de Dados baseada em linguagem natural que permite aos usuários fazer perguntas sobre dados de vendas usando linguagem natural. O sistema converte perguntas em SQL usando Google Gemini, executa as consultas em um banco SQLite e apresenta os resultados em tabelas e gráficos interativos.
 
-## Arquitetura
+## ✨ Características Visuais
+
+- 🎨 **Design Moderno**: Interface com gradientes, sombras suaves e animações elegantes
+- 📱 **Responsivo**: Layout adaptável para desktop e mobile
+- 🌈 **Paleta de Cores**: Gradientes vibrantes e cores harmoniosas
+- ⚡ **Animações**: Transições suaves e efeitos hover interativos
+- 📊 **Gráficos Avançados**: Visualizações com tooltips personalizados e formatação monetária
+- 🎯 **UX Intuitiva**: Componentes bem organizados com ícones expressivos
+
+## 🏗️ Arquitetura
 
 A aplicação é dividida em backend e frontend:
 
 - **Backend (Python/FastAPI)**: Gerencia a lógica de negócio, integração com Gemini API e execução de SQL.
-- **Frontend (React/Next.js)**: Interface de usuário para fazer perguntas e visualizar resultados.
+- **Frontend (React/Next.js)**: Interface responsiva com chat, tabela e gráficos automáticos.
 - **Banco de Dados (SQLite)**: Armazena dados de vendas fictícios.
 
-## Tecnologias
+## 🛠️ Tecnologias
 
-- Backend: Python, FastAPI, Google Gemini API
-- Frontend: React, Next.js, Chart.js
-- Banco: SQLite
-- IA: Google Gemini 1.5 Flash
+- **Backend**: Python, FastAPI, Google Gemini API
+- **Frontend**: React, Next.js, Chart.js, Tailwind CSS
+- **Banco**: SQLite
+- **IA**: Google Gemini 2.0 Flash Experimental
 
 ## Como Rodar Localmente
 
@@ -104,20 +113,46 @@ ai-sql-dashboard/
 └── README.md
 ```
 
-## Exemplos de Perguntas
+## 💬 Exemplos de Perguntas
 
 - "Qual produto vendeu mais?"
 - "Quanto foi vendido no total?"
 - "Quais vendas foram parceladas?"
 - "Qual é a média de valor por produto?"
+- "Quantas vendas houve por forma de pagamento?"
+- "Mostre as vendas dos últimos 30 dias"
 
-## Funcionalidades
+## 🚀 Demonstração
+
+![AI SQL Dashboard](https://via.placeholder.com/800x400/6366f1/ffffff?text=AI+SQL+Dashboard+Demo)
+
+*A interface moderna com gradientes, animações e visualizações interativas.*
+
+## 🎨 Interface e UX
+
+### Componentes Principais
+- **Header Gradiente**: Cabeçalho com gradiente azul-roxo e animações
+- **Chat Inteligente**: Campo de entrada com sugestões de perguntas e botão animado
+- **Cards Elegantes**: Resultados organizados em cards com gradientes coloridos
+- **Tabela Moderna**: Tabela responsiva com zebra stripes e hover effects
+- **Gráficos Interativos**: Visualizações com tooltips personalizados e formatação brasileira
+
+### Funcionalidades Visuais
+- Animações de entrada suaves
+- Efeitos hover em todos os componentes
+- Scrollbar customizado
+- Notificações de erro elegantes
+- Loading states com spinners animados
+- Responsividade completa
+
+## 📊 Funcionalidades
 
 - Conversão de linguagem natural para SQL usando IA
 - Validação e execução segura de consultas SQL (apenas SELECT)
 - Visualização de dados em tabelas e gráficos automáticos
 - Interface responsiva e moderna
 - Tratamento de erros e mensagens amigáveis
+- Detecção automática de tipos de gráfico (barra, linha, pizza)
 
 ## Segurança
 
