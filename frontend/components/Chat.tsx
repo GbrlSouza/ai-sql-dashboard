@@ -22,7 +22,8 @@ export default function Chat({ onQuery, loading }: ChatProps) {
     "Qual produto vendeu mais?",
     "Quanto foi vendido no total?",
     "Quais vendas foram parceladas?",
-    "Qual é a média de valor por produto?"
+    "Qual é a média de valor por produto?",
+    "Mostre as vendas dos últimos 30 dias"
   ]
 
   return (

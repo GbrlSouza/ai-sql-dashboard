@@ -86,13 +86,13 @@ export default function Home() {
         {result && (
           <div className="row">
             <div className="col-12 col-lg-4 mb-3 gap-3 d-flex flex-column">
-              <div className="card h-25">
+              <div className="card h-100 d-flex flex-column">
                 <div className="card-header">Resumo</div>
                 <div className="card-body">
                   <p className="card-text small">{result.summary}</p>
                 </div>
               </div>
-              <div className="card h-25">
+              <div className="card h-100 d-flex flex-column">
                 <div className="card-header">Consulta SQL</div>
                 <div className="card-body">
                   <pre className="bg-light p-2 border rounded"><code>{result.sql}</code></pre>
